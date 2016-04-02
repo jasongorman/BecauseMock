@@ -9,7 +9,7 @@ Supplied with no warranty - use at your peril!
 
 To create and use a mock object (based on an interface - though it may work with concrete classes, haven't checked yet):
 
-'''java
+```java
 import static com.codemanship.becausemock.BecauseMock.*;
 
 class MyTests {
@@ -21,13 +21,13 @@ class MyTests {
     verify(myMock).foo(1,2);
   }
 }
-'''
+```
 
 If foo() isn't invoked with args 1,2 then a MockException will be thrown and the test will fail.
 
 To create a stub that returns a specified test data value (can be any primative or object):
 
-'''java
+```java
 import static com.codemanship.becausemock.BecauseMock.*;
 
 class MyTests {
@@ -41,4 +41,4 @@ class MyTests {
   }
   
 }
-'''
+```
