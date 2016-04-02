@@ -29,4 +29,11 @@ public class MethodInvocation {
 		return value;
 	}
 
+	protected boolean matches(Method methodToVerify, Object[] args, ArrayMatcher arrayMatcher) {
+		if(method.equals(methodToVerify)){
+			return arrayMatcher.match(args, getArgs());
+		}
+		return false;
+	}
+
 }

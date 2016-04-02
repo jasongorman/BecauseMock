@@ -12,15 +12,13 @@ class Stubs extends InvocationList {
 	}
 
 	Object findReturnValue(Method method, Object[] args) {
-		Object returnValue = defaultValueGenerator.getDefaultFor(method);
 		for (MethodInvocation stub : invocations) {
-			if(stub.getMethod() == method && arrayMatcher.match(args, stub.getArgs())){
-				returnValue = stub.getReturnValue();
+			if(stub.matches(method, args, arrayMatcher)){
 				invocations.remove(stub);
-				break;
+				return stub.getReturnValue();
 			}
 		}
-		return returnValue;
+		return defaultValueGenerator.getDefaultFor(method);
 	}
 
 	void thenReturn(Object value) {

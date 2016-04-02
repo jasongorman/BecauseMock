@@ -9,14 +9,11 @@ class Invocations extends InvocationList {
 	}
 
 	boolean matchFound(Method method, Object[] args) {
-		boolean wasInvoked = false;
 		for (MethodInvocation invocation : invocations) {
-			if(invocation.getMethod().equals(method)){
-				wasInvoked  = arrayMatcher.match(args, invocation.getArgs());
-				break;
-			}
+			if(invocation.matches(method, args, arrayMatcher))
+				return true;
 		}
-		return wasInvoked;
+		return false;
 	}
 
 }
