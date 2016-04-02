@@ -2,36 +2,28 @@ package com.codemanship.becausemock;
 import java.lang.reflect.Method;
 
 
-public class MethodInvocation {
+class MethodInvocation {
 
 	private final Method method;
 	private final Object[] args;
 	private Object value;
 
-	public MethodInvocation(Method method, Object[] args) {
+	MethodInvocation(Method method, Object[] args) {
 		this.args = args;
 		this.method = method;
 	}
 
-	public Method getMethod() {
-		return method;
-	}
-
-	public Object[] getArgs() {
-		return args;
-	}
-
-	public void setReturnValue(Object value) {
+	void setReturnValue(Object value) {
 		this.value = value;		
 	}
 
-	public Object getReturnValue() {
+	Object getReturnValue() {
 		return value;
 	}
 
-	protected boolean matches(Method methodToVerify, Object[] args, ArrayMatcher arrayMatcher) {
+	boolean matches(Method methodToVerify, Object[] argsToVerify, ArrayMatcher arrayMatcher) {
 		if(method.equals(methodToVerify)){
-			return arrayMatcher.match(args, getArgs());
+			return arrayMatcher.match(argsToVerify, args);
 		}
 		return false;
 	}

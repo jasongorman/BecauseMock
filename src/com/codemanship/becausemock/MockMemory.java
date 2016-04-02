@@ -10,8 +10,8 @@ import net.bytebuddy.implementation.bind.annotation.This;
 public class MockMemory {
 	
 	private boolean verifying = false;
-	private Stubs stubs;
-	private Invocations invocations;
+	private final Stubs stubs;
+	private final Invocations invocations;
 	
 	public MockMemory(Stubs stubs, Invocations invocations) {
 		this.stubs = stubs;

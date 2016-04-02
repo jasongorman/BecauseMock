@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 class Invocations extends InvocationList {
 
-	public Invocations(ArrayMatcher arrayMatcher) {
+	Invocations(ArrayMatcher arrayMatcher) {
 		super(arrayMatcher);
 	}
 

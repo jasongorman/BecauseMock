@@ -6,7 +6,7 @@ import java.util.Map;
 
 class DefaultValueGenerator {
 
-	private Map<Class<?>, Object> defaults = new HashMap<Class<?>,Object>();
+	private final Map<Class<?>, Object> defaults = new HashMap<Class<?>,Object>();
 	
 	DefaultValueGenerator(){
 		defaults.put(int.class, 0);

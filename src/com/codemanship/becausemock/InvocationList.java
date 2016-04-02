@@ -5,11 +5,11 @@ import java.util.List;
 
 public class InvocationList {
 
-	protected List<MethodInvocation> invocations = new ArrayList<MethodInvocation>();
+	protected final List<MethodInvocation> invocations = new ArrayList<MethodInvocation>();
 	protected final ArrayMatcher arrayMatcher;
 
-	public InvocationList(ArrayMatcher arrayMatcher2) {
-		this.arrayMatcher = arrayMatcher2;
+	public InvocationList(ArrayMatcher arrayMatcher) {
+		this.arrayMatcher = arrayMatcher;
 	}
 
 	void add(MethodInvocation stub) {
